@@ -3,11 +3,12 @@ package search.strategy;
 import java.util.*;
 
 public class NoneSearch implements TypeOfSearch {
-    private final Set<Integer> allIndexOfPeople = new LinkedHashSet<>();
-    private final Set<Integer> filterPeople = new LinkedHashSet<>();
 
     @Override
     public Set<Integer> search(Map<String, ArrayList<Integer>> wordOfPersons) {
+
+        final Set<Integer> allIndexOfPeople = new LinkedHashSet<>();
+        final Set<Integer> filterPeople = new LinkedHashSet<>();
 
         wordOfPersons.values().forEach(allIndexOfPeople::addAll);
 

@@ -20,11 +20,12 @@ public class FindPerson {
     }
 
     public void search(Map<String, ArrayList<Integer>> wordOfPersons) {
+
         filterIndexOfPeople = this.typeOfSearch.search(wordOfPersons);
         view();
     }
 
-    public void view() {
+    private void view() {
 
         if (filterIndexOfPeople.size() == 0) {
             System.out.println("No matching people found.");

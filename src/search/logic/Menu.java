@@ -16,9 +16,13 @@ public class Menu {
     static Scanner scanner = new Scanner(System.in);
     static List<String> peopleData = new ArrayList<>();
 
-    public void menu() {
-        MapFinder mapFinder = new MapFinder(peopleData);
+    private void menu() {
+        MapFinder mapFinder = new MapFinder();
+        mapFinder.fillingMap(peopleData);
+
+
         FindPerson findPerson = new FindPerson(peopleData);
+
         while (true) {
             System.out.println("""
                     === Menu ===
@@ -33,6 +37,7 @@ public class Menu {
             } else {
                 controller = Integer.parseInt(controllerString);
             }
+
             switch (controller) {
                 case 1 -> {
                     typeOfStrategy(findPerson);
@@ -49,7 +54,7 @@ public class Menu {
         }
     }
 
-    public void typeOfStrategy(FindPerson findPerson) {
+    private void typeOfStrategy(FindPerson findPerson) {
         while (true) {
             System.out.println("Select a matching strategy: ALL, ANY, NONE");
             String strategy = scanner.nextLine();
@@ -74,7 +79,7 @@ public class Menu {
         }
     }
 
-    public void printAllPerson() {
+    private void printAllPerson() {
         System.out.println("\n=== List of people ===");
         peopleData.forEach(System.out::println);
     }

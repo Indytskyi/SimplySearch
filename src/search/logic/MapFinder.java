@@ -7,15 +7,10 @@ import java.util.TreeMap;
 
 
 public class MapFinder {
-    private final List<String> peopleData;
+
     private final Map<String, ArrayList<Integer>> wordOfPersons = new TreeMap<>();
 
-    public MapFinder(List<String> peopleData) {
-        this.peopleData = peopleData;
-        fillingMap();
-    }
-
-    void fillingMap() {
+    void fillingMap(List<String> peopleData) {
 
         for (int i = 0; i < peopleData.size(); i++) {
 
